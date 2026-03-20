@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alamin Molla, M.Sc. — Urban Scientist & GIScience Ph.D. Candidate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0f0e;
+    --ink-muted: #5a5a56;
+    --ink-faint: #9a9a94;
+    --paper: #faf9f6;
+    --paper-warm: #f2f0eb;
+    --paper-card: #ffffff;
+    --accent: #1a3a2a;
+    --accent-light: #2d5e42;
+    --accent-pale: #e8f0eb;
+    --gold: #b8860b;
+    --gold-pale: #fdf6e3;
+    --border: rgba(15,15,14,0.1);
+    --border-strong: rgba(15,15,14,0.2);
+    --radius: 4px;
+    --radius-lg: 10px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes lineGrow {
+    from { width: 0; }
+    to   { width: 100%; }
+  }
+  .reveal { animation: fadeUp 0.7s ease both; }
+  .reveal-1 { animation-delay: 0.1s; }
+  .reveal-2 { animation-delay: 0.2s; }
+  .reveal-3 { animation-delay: 0.3s; }
+  .reveal-4 { animation-delay: 0.4s; }
+  .reveal-5 { animation-delay: 0.55s; }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250,249,246,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 58px;
+  }
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .nav-links a {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: all 0.2s;
+  }
+  .nav-links a:hover { background: var(--paper-warm); color: var(--ink); }
+  .nav-cta {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 7px 18px !important;
+    background: var(--accent) !important;
+    color: #fff !important;
+    border-radius: 20px !important;
+    letter-spacing: 0.3px !important;
+    text-transform: none !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--accent-light) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 0;
+    min-height: 88vh;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-left {
+    padding: 72px 56px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--border);
+  }
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+    animation: fadeUp 0.6s ease 0.1s both;
+  }
+  .eyebrow-line {
+    width: 32px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .eyebrow-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent-light);
+  }
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 6vw, 72px);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    color: var(--ink);
+    margin-bottom: 8px;
+    animation: fadeUp 0.7s ease 0.2s both;
+  }
+  .hero-degree {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--ink-muted);
+    margin-bottom: 28px;
+    animation: fadeUp 0.7s ease 0.3s both;
+  }
+  .hero-tagline {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--ink-muted);
+    max-width: 560px;
+    margin-bottom: 36px;
+    animation: fadeUp 0.7s ease 0.4s both;
+  }
+  .hero-tagline strong { font-weight: 500; color: var(--ink); }
+  .hero-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    animation: fadeUp 0.7s ease 0.5s both;
+  }
+  .badge {
+    font-size: 11px;
+    font-weight: 400;
+    padding: 5px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border-strong);
+    color: var(--ink-muted);
+    letter-spacing: 0.2px;
+  }
+  .badge-green {
+    background: var(--accent-pale);
+    border-color: var(--accent-light);
+    color: var(--accent);
+  }
+  .badge-gold {
+    background: var(--gold-pale);
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+  .hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    animation: fadeUp 0.7s ease 0.6s both;
+  }
+  .btn-primary {
+    font-size: 13px;
+    font-weight: 500;
+    padding: 11px 28px;
+    border-radius: 4px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    letter-spacing: 0.2px;
+  }
+  .btn-primary:hover { background: var(--accent-light); }
+  .btn-outline {
+    font-size: 13px;
+    font-weight: 400;
+    padding: 11px 28px;
+    border-radius: 4px;
+    background: transparent;
+    color: var(--ink);
+    text-decoration: none;
+    border: 1px solid var(--border-strong);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { background: var(--paper-warm); }
+
+  /* ── HERO RIGHT ── */
+  .hero-right {
+    padding: 48px 36px;
+    background: var(--paper-warm);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    animation: fadeIn 1s ease 0.4s both;
+  }
+  .profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .profile-affil {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .profile-sub {
+    font-size: 12px;
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+  .contact-block {
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+  }
+  .contact-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .contact-icon {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-faint);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    min-width: 40px;
+    padding-top: 1px;
+  }
+  .contact-val {
+    font-size: 12px;
+    color: var(--ink-muted);
+  }
+  .contact-val a { color: var(--accent-light); text-decoration: none; }
+  .social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+  }
+  .social-btn {
+    font-size: 11px;
+    font-weight: 400;
+    padding: 7px 10px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--paper-card);
+    color: var(--ink-muted);
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .social-btn:hover { border-color: var(--accent-light); color: var(--accent); background: var(--accent-pale); }
+
+  /* ── STAT BAR ── */
+  .stat-bar {
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background: var(--ink);
+  }
+  .stat-item {
+    padding: 28px 32px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    animation: fadeUp 0.6s ease both;
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-size: 11px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.3px;
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    padding: 72px 56px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-alt { background: var(--paper-warm); }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 1px;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.3px;
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── ABOUT ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .about-text p {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.85;
+    color: var(--ink-muted);
+    margin-bottom: 16px;
+  }
+  .about-text p strong { font-weight: 500; color: var(--ink); }
+  .research-areas {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .research-area {
+    padding: 16px 20px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--paper-card);
+    transition: border-color 0.2s;
+  }
+  .research-area:hover { border-color: var(--accent-light); }
+  .ra-category {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 4px;
+  }
+  .ra-items {
+    font-size: 12px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+
+  /* ── EDUCATION ── */
+  .edu-list { display: flex; flex-direction: column; gap: 0; }
+  .edu-item {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 32px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .edu-item:first-child { border-top: 1px solid var(--border); }
+  .edu-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 1px;
+    padding-top: 3px;
+  }
+  .edu-degree {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 4px;
+  }
+  .edu-institution {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent-light);
+    margin-bottom: 4px;
+  }
+  .edu-thesis {
+    font-size: 12px;
+    font-style: italic;
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+
+  /* ── PUBLICATIONS ── */
+  .pub-list { display: flex; flex-direction: column; gap: 0; }
+  .pub-item {
+    display: grid;
+    grid-template-columns: 56px 1fr auto;
+    gap: 20px 28px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+    transition: background 0.15s;
+  }
+  .pub-item:first-child { border-top: 1px solid var(--border); }
+  .pub-item:hover { background: var(--accent-pale); margin: 0 -20px; padding: 24px 20px; border-radius: var(--radius); }
+  .pub-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-faint);
+    padding-top: 3px;
+    text-align: right;
+  }
+  .pub-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+  .pub-meta {
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-bottom: 8px;
+  }
+  .pub-meta em { font-style: italic; color: var(--ink); }
+  .pub-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .pub-tag {
+    font-size: 10px;
+    padding: 3px 9px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    color: var(--ink-muted);
+  }
+  .tag-sole { border-color: var(--accent); color: var(--accent); background: var(--accent-pale); }
+  .tag-gold { border-color: var(--gold); color: var(--gold); background: var(--gold-pale); }
+  .pub-year-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-faint);
+    white-space: nowrap;
+    padding-top: 3px;
+  }
+
+  /* ── AWARDS ── */
+  .awards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .award-card {
+    padding: 20px 22px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--paper-card);
+    transition: all 0.2s;
+  }
+  .award-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+  .award-amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .award-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 3px;
+    line-height: 1.4;
+  }
+  .award-org {
+    font-size: 11px;
+    color: var(--ink-muted);
+  }
+  .award-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-faint);
+    margin-top: 6px;
+  }
+
+  /* ── CONFERENCE ── */
+  .conf-list { display: flex; flex-direction: column; gap: 0; }
+  .conf-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 24px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .conf-item:first-child { border-top: 1px solid var(--border); }
+  .conf-role-wrap { display: flex; flex-direction: column; gap: 4px; }
+  .conf-role {
+    font-size: 10px;
+    font-weight: 500;
+    padding: 3px 9px;
+    border-radius: 20px;
+    border: 1px solid var(--border-strong);
+    color: var(--ink-muted);
+    display: inline-block;
+    text-align: center;
+  }
+  .conf-role-chair { border-color: var(--accent-light); color: var(--accent); background: var(--accent-pale); }
+  .conf-role-organizer { border-color: var(--gold); color: var(--gold); background: var(--gold-pale); }
+  .conf-year-tag { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--ink-faint); text-align: center; margin-top: 4px; }
+  .conf-title { font-size: 13px; font-weight: 500; color: var(--ink); line-height: 1.45; margin-bottom: 3px; }
+  .conf-venue { font-size: 12px; color: var(--ink-muted); }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .skill-card {
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--paper-card);
+  }
+  .skill-category {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 10px;
+  }
+  .skill-items {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .skill-item { font-size: 12px; color: var(--ink-muted); }
+
+  /* ── MEDIA ── */
+  .media-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .media-card {
+    padding: 20px 22px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--paper-card);
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .media-card:hover { border-color: var(--accent-light); transform: translateY(-2px); }
+  .media-source {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 8px;
+  }
+  .media-headline {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+
+  /* ── TEACHING ── */
+  .teach-list { display: flex; flex-direction: column; gap: 14px; }
+  .teach-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .teach-item:first-child { border-top: 1px solid var(--border); }
+  .teach-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-faint);
+    padding-top: 2px;
+  }
+  .teach-title { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 3px; }
+  .teach-detail { font-size: 12px; color: var(--ink-muted); }
+  .rating-pill {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    background: var(--accent-pale);
+    color: var(--accent);
+    border: 1px solid var(--accent-light);
+    margin-left: 8px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    padding: 48px 56px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: start;
+  }
+  .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .footer-sub { font-size: 12px; color: rgba(255,255,255,0.45); margin-bottom: 16px; }
+  .footer-contact { font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.8; }
+  .footer-contact a { color: rgba(255,255,255,0.7); text-decoration: none; }
+  .footer-links { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
+  .footer-link {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-link:hover { color: #fff; }
+  .footer-bottom {
+    background: var(--ink);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 16px 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-bottom p { font-size: 11px; color: rgba(255,255,255,0.25); }
+
+  /* ── REFERENCES ── */
+  .ref-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .ref-card {
+    padding: 20px 22px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--paper-card);
+  }
+  .ref-name { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+  .ref-title { font-size: 12px; color: var(--ink-muted); line-height: 1.5; margin-bottom: 10px; }
+  .ref-email { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--accent-light); }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .stat-bar { grid-template-columns: repeat(3, 1fr); }
+    .about-grid, .awards-grid, .skills-grid, .media-list, .ref-grid { grid-template-columns: 1fr 1fr; }
+    .section { padding: 48px 28px; }
+    nav { padding: 0 20px; }
+    footer { grid-template-columns: 1fr; padding: 36px 28px; }
+    .footer-links { align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">Alamin Molla</a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#awards">Awards</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#contact" class="nav-cta">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">Ph.D. Candidate · GIScience · Arizona State University</span>
+    </div>
+    <h1 class="hero-name">Alamin<br>Molla</h1>
+    <div class="hero-degree">M.Sc. — Urban Scientist &amp; GeoAI Researcher</div>
+    <p class="hero-tagline">
+      Harnessing <strong>geospatial artificial intelligence</strong>, spatial statistics, and remote sensing to solve pressing urban challenges. My research advances the science of <strong>urban heat, air quality, and climate justice</strong> — with implications for planetary health and resilient cities worldwide.
+    </p>
+    <div class="hero-badges">
+      <span class="badge badge-green">DOE SW-IFL Researcher</span>
+      <span class="badge badge-green">NASA Panel Reviewer</span>
+      <span class="badge badge-gold">AAG $12K Award 2026</span>
+      <span class="badge">FAA Certified Drone Pilot</span>
+      <span class="badge">9 Peer-Reviewed Publications</span>
+    </div>
+    <div class="hero-actions">
+      <a href="mailto:amolla@asu.edu" class="btn-primary">Get in Touch</a>
+      <a href="https://sites.google.com/view/alaminmolla/home" target="_blank" class="btn-outline">Google Site ↗</a>
+      <a href="https://scholar.google.com/citations?user=LeIyUV4AAAAJ&hl=en" target="_blank" class="btn-outline">Google Scholar ↗</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="profile-avatar">AM</div>
+    <div>
+      <div class="profile-affil">Arizona State University</div>
+      <div class="profile-sub">School of Geographical Sciences<br>& Urban Planning<br>Ph.D. Expected: Spring 2027</div>
+    </div>
+    <div class="contact-block">
+      <div class="contact-row">
+        <span class="contact-icon">Email</span>
+        <span class="contact-val"><a href="mailto:amolla@asu.edu">amolla@asu.edu</a></span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-icon">Cell</span>
+        <span class="contact-val">334-275-5734</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-icon">Office</span>
+        <span class="contact-val">Lattie F. Coor Hall, Room 5549<br>975 S Myrtle Ave, Tempe AZ</span>
+      </div>
+    </div>
+    <div class="social-grid">
+      <a class="social-btn" href="https://www.linkedin.com/in/alamin-molla-051397a7/" target="_blank">LinkedIn</a>
+      <a class="social-btn" href="https://scholar.google.com/citations?user=LeIyUV4AAAAJ&hl=en" target="_blank">Scholar</a>
+      <a class="social-btn" href="https://www.researchgate.net/profile/Alamin-Molla" target="_blank">ResearchGate</a>
+      <a class="social-btn" href="https://github.com/AlaminMolla-Geospatial" target="_blank">GitHub</a>
+      <a class="social-btn" href="https://bsky.app/profile/alamingis.bsky.social" target="_blank">Bluesky</a>
+      <a class="social-btn" href="https://search.asu.edu/profile/4671024" target="_blank">ASU Profile</a>
+    </div>
+  </div>
+</section>
+
+<!-- STAT BAR -->
+<div class="stat-bar">
+  <div class="stat-item reveal reveal-1">
+    <div class="stat-num">9</div>
+    <div class="stat-label">Peer-reviewed publications</div>
+  </div>
+  <div class="stat-item reveal reveal-2">
+    <div class="stat-num">$16K+</div>
+    <div class="stat-label">Research awards &amp; grants</div>
+  </div>
+  <div class="stat-item reveal reveal-3">
+    <div class="stat-num">12+</div>
+    <div class="stat-label">Conference presentations</div>
+  </div>
+  <div class="stat-item reveal reveal-4">
+    <div class="stat-num">3</div>
+    <div class="stat-label">Students mentored</div>
+  </div>
+  <div class="stat-item reveal reveal-5">
+    <div class="stat-num">2027</div>
+    <div class="stat-label">Expected Ph.D. graduation</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title">About</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I am a <strong>Ph.D. candidate in Geographic Information Science (GIScience)</strong> at the School of Geographical Sciences and Urban Planning at Arizona State University, with an expected completion in Spring 2027. My dissertation focuses on machine learning and spatial statistical modeling for investigating air temperature variation and exposure patterns.</p>
+      <p>My academic journey spans three continents. I earned a <strong>Bachelor of Urban and Rural Planning</strong> from Khulna University, Bangladesh; an <strong>M.Sc. in Geography</strong> from Auburn University; and an <strong>M.Sc. in Geoinformatics &amp; Geospatial Intelligence</strong> from George Mason University.</p>
+      <p>I serve as a <strong>Graduate Research Assistant at the Urban Climate Research Center</strong>, contributing to the DOE-funded Southwest Urban Integrated Field Laboratory (SW-IFL) — a multi-million dollar initiative uniting Arizona's three public research universities, national laboratories, and community stakeholders. I am also an <strong>FAA-certified drone pilot</strong> and have reviewed proposals for NASA and panels for Columbia University.</p>
+      <p>Beyond research, I actively shape the academic community as a <strong>session chair, co-chair, and organizer</strong> at the American Association of Geographers (AAG) and the American Geophysical Union (AGU), and mentor the next generation of urban scientists.</p>
+    </div>
+    <div class="research-areas">
+      <div class="research-area">
+        <div class="ra-category">Spatial Data Science</div>
+        <div class="ra-items">GIScience · GeoAI · Spatial Statistics · Machine Learning · Deep Learning</div>
+      </div>
+      <div class="research-area">
+        <div class="ra-category">Remote Sensing</div>
+        <div class="ra-items">Landsat · MODIS · SAR · LiDAR · UAV / Drone Imagery · Google Earth Engine</div>
+      </div>
+      <div class="research-area">
+        <div class="ra-category">Environmental Science</div>
+        <div class="ra-items">Urban Climate Intelligence (UCINT) · Urban Heat Island (UHI) · Air Quality · Extreme Heat</div>
+      </div>
+      <div class="research-area">
+        <div class="ra-category">Justice &amp; Health</div>
+        <div class="ra-items">Climate Justice · Environmental Justice · Public Health · Socio-Demographic Inequalities</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="section section-alt" id="education">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Education</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="edu-list">
+    <div class="edu-item">
+      <div class="edu-year">Expected<br>Spring 2027</div>
+      <div>
+        <div class="edu-degree">Ph.D. in Geographic Information Science</div>
+        <div class="edu-institution">Arizona State University, Tempe, AZ</div>
+        <div class="edu-thesis">Dissertation (tentative): Machine Learning and spatial statistical modelling for investigating air temperature variation and exposure patterns.</div>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-year">Spring 2023</div>
+      <div>
+        <div class="edu-degree">M.S. in Geoinformatics &amp; Geospatial Intelligence</div>
+        <div class="edu-institution">George Mason University, Fairfax, VA</div>
+        <div class="edu-thesis">Project: Improved understanding of precipitation patterns over multiple urban systems.</div>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-year">Spring 2020</div>
+      <div>
+        <div class="edu-degree">M.Sc. in Geography</div>
+        <div class="edu-institution">Auburn University, Auburn, AL</div>
+        <div class="edu-thesis">Thesis: Towards Urban Sustainability — Stormwater Management and Solar Power Potential of Auburn University.</div>
+      </div>
+    </div>
+    <div class="edu-item">
+      <div class="edu-year">December 2015</div>
+      <div>
+        <div class="edu-degree">Bachelor of Urban and Rural Planning (BURP)</div>
+        <div class="edu-institution">Khulna University, Khulna, Bangladesh</div>
+        <div class="edu-thesis">Thesis: Urban Form Analysis of Selected Secondary Cities in Bangladesh.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section class="section" id="publications">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Publications</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="pub-list">
+
+    <div class="pub-item">
+      <div class="pub-num">09</div>
+      <div>
+        <div class="pub-title">Urban Climate INTelligence (UCINT): A scalable framework for resilient cities</div>
+        <div class="pub-meta"><em>Climate Physics and Atmospheric Science: Scientific Insights and Societal Challenges</em> · 1–2, 100001</div>
+        <div class="pub-tags">
+          <span class="pub-tag tag-sole">Sole Author</span>
+          <span class="pub-tag">Urban Climate</span>
+          <span class="pub-tag">Resilience</span>
+        </div>
+      </div>
+      <div class="pub-year-badge">2026</div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-num">08</div>
+      <div>
+        <div class="pub-title">Citizen science coupled with machine learning to quantify green-blue infrastructure cooling potential in Maricopa County, Arizona</div>
+        <div class="pub-meta">Molla, Lamer, Sailor · <em>Sustainable Cities and Society</em> 139, 107211</div>
+        <div class="pub-tags">
+          <span class="pub-tag">Citizen Science</span>
+          <span class="pub-tag">Cooling Infrastructure</span>
+          <span class="pub-tag">Machine Learning</span>
+        </div>
+      </div>
+      <div class="pub-year-badge">2026</div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-num">07</div>
+      <div>
+        <div class="pub-title">Addressing data gaps and disparities in access to air quality networks: A case study of Maricopa County, Arizona</div>
+        <div class="pub-meta">Molla, Flores, Sailor · <em>Population and Environment</em> 47 (3): 27</div>
+        <div class="pub-tags">
+          <span class="pub-tag">Air Quality</span>
+          <span class="pub-tag">Environmental Justice</span>
+          <span class="pub-tag">Data Equity</span>
+        </div>
+      </div>
+      <div class="pub-year-badge">2025</div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-num">06</div>
+      <div>
+        <div class="pub-title">Extreme heat and human fertility: Amplified challenges in the era of climate change</div>
+        <div class="pub-meta"><em>Journal of Thermal Biology</em> 130: 104158</div>
+        <div class="pub-tags">
+          <span class="pub-tag tag-sole">Sole Author</span>
+          <span class="pub-tag">Extreme Heat</span>
+          <span class="pub-tag">Planetary Health</span>
+        </div>
+      </div>
+      <div class="pub-year-badge">2025</div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-num">05</div>
+      <div>
+        <div class="pub-title">Exploring air temperature variability and socio-demographic inequalities in heat exposure through machine learning: Maricopa County, Arizona</div>
+        <div class="pub-meta">Molla, Sailor, Flores · <em>Urban Climate</em> 59: 102276</div>
+        <div class="pub-tags">
+          <span class="pub-tag">XGBoost</span>
+          <span class="pub-tag">Heat Exposure</span>
+          <span class="pub-tag">Social Equity</span>
+        </div>
+      </div>
+      <div class="pub-year-badge">2025</div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-num">04</div>
+      <div>
+        <div class="pub-title">Multi-criteria decision support framework for outdoor heat stress management in urban environments</div>
+        <div class="pub-meta">Amaripadath, Molla, Keith, Sailor · <em>Sustainable Cities and Society</em> 114: 105799</div>
+        <div class="pub-tags">
+          <span class="pub-tag">Heat Stress</span>
+          <span class="pub-tag">Decision Support</span>
+          <span class="pub-tag">Phoenix Metro</span>
+        </div>
+      </div>
+      <div class="pub-year-badge">2024</div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-num">03</div>
+      <div>
+        <div class="pub-title">Evaluating contributions of urbanization and global climate change to urban land surface temperature change: Lagos, Nigeria</div>
+        <div class="pub-meta">Guo, Di, Zhang, Lin, Chen, Molla · <em>Nature Scientific Reports</em> 12: 14168</div>
+        <div class="pub-tags">
+          <span class="pub-tag tag-gold">Nature</span>
+          <span class="pub-tag">Urbanization</span>
+          <span class="pub-tag">Land Surface Temp</span>
+          <span class="pub-tag">Remote Sensing</span>
+        </div>
+      </div>
+      <div class="pub-year-badge">2022</div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-num">02</div>
+      <div>
+        <div class="pub-title">Spatio-temporal responses of precipitation to urbanization with Google Earth Engine: Lagos, Nigeria</div>
+        <div class="pub-meta">Molla, Di, Guo, Zhang, Chen · <em>Urban Science</em> 6(2): 40</div>
+        <div class="pub-tags">
+          <span class="pub-tag">Google Earth Engine</span>
+          <span class="pub-tag">Precipitation</span>
+          <span class="pub-tag">Urbanization</span>
+        </div>
+      </div>
+      <div class="pub-year-badge">2022</div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-num">01</div>
+      <div>
+        <div class="pub-title">Assessment of and solutions to the stormwater management system of Auburn University campus, Alabama</div>
+        <div class="pub-meta">Molla, Mitra, Vasconcelos · <em>Journal of Water Management Modeling</em></div>
+        <div class="pub-tags">
+          <span class="pub-tag">Stormwater</span>
+          <span class="pub-tag">Urban Sustainability</span>
+        </div>
+      </div>
+      <div class="pub-year-badge">2022</div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="section section-alt" id="awards">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Awards &amp; Fellowships</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="awards-grid">
+    <div class="award-card">
+      <div class="award-amount">$12,000</div>
+      <div class="award-name">International Geographic Information Funds</div>
+      <div class="award-org">American Association of Geographers (AAG)</div>
+      <div class="award-year">2026</div>
+    </div>
+    <div class="award-card">
+      <div class="award-amount">$1,000</div>
+      <div class="award-name">Anthony Brazel Research Award</div>
+      <div class="award-org">School of Geographical Sciences &amp; Urban Planning, ASU</div>
+      <div class="award-year">2025</div>
+    </div>
+    <div class="award-card">
+      <div class="award-amount">$950</div>
+      <div class="award-name">Research Travel Grant</div>
+      <div class="award-org">Graduate Student Government, ASU</div>
+      <div class="award-year">2025</div>
+    </div>
+    <div class="award-card">
+      <div class="award-amount">$500</div>
+      <div class="award-name">Research Travel Award</div>
+      <div class="award-org">School of Geographical Sciences &amp; Urban Planning, ASU</div>
+      <div class="award-year">2025</div>
+    </div>
+    <div class="award-card">
+      <div class="award-amount">$300</div>
+      <div class="award-name">Research Travel Award</div>
+      <div class="award-org">Graduate College, Arizona State University</div>
+      <div class="award-year">2025</div>
+    </div>
+    <div class="award-card">
+      <div class="award-amount">$660</div>
+      <div class="award-name">Professional Development Award</div>
+      <div class="award-org">School of Geographical Sciences &amp; Urban Planning, ASU</div>
+      <div class="award-year">2024</div>
+    </div>
+    <div class="award-card">
+      <div class="award-amount">$950</div>
+      <div class="award-name">Research Travel Grant</div>
+      <div class="award-org">Graduate Student Government, ASU</div>
+      <div class="award-year">2024</div>
+    </div>
+    <div class="award-card">
+      <div class="award-amount">$500</div>
+      <div class="award-name">Research Travel Award (×2)</div>
+      <div class="award-org">SGSUP, ASU &amp; Graduate College, ASU</div>
+      <div class="award-year">2024</div>
+    </div>
+    <div class="award-card">
+      <div class="award-amount">$500</div>
+      <div class="award-name">Geosciences Advisory Board Award</div>
+      <div class="award-org">Auburn University</div>
+      <div class="award-year">2019</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFERENCE LEADERSHIP -->
+<section class="section" id="research">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Conference Leadership</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="conf-list">
+    <div class="conf-item">
+      <div class="conf-role-wrap">
+        <span class="conf-role conf-role-chair">Panel Chair</span>
+        <span class="conf-role conf-role-organizer">Organizer</span>
+        <div class="conf-year-tag">AAG 2026</div>
+      </div>
+      <div>
+        <div class="conf-title">Artificial Intelligence in Urban Climate Action: Integrating Data, Science, and Planning</div>
+        <div class="conf-venue">American Association of Geographers · San Francisco, CA</div>
+      </div>
+    </div>
+    <div class="conf-item">
+      <div class="conf-role-wrap">
+        <span class="conf-role conf-role-chair">Paper Chair</span>
+        <span class="conf-role conf-role-organizer">Organizer</span>
+        <div class="conf-year-tag">AAG 2026</div>
+      </div>
+      <div>
+        <div class="conf-title">Multiple Hazards, Shared Vulnerabilities: Measuring, Modeling, and Mitigating Urban Heat, Air Pollution, and Flood Risk (1 &amp; 2)</div>
+        <div class="conf-venue">American Association of Geographers · San Francisco, CA</div>
+      </div>
+    </div>
+    <div class="conf-item">
+      <div class="conf-role-wrap">
+        <span class="conf-role conf-role-organizer">Primary Convenor</span>
+        <div class="conf-year-tag">AGU 2025</div>
+      </div>
+      <div>
+        <div class="conf-title">Heat, Air Pollution, and Greenhouse Gases: Health and Environmental Impacts Across Urban and Energy Systems</div>
+        <div class="conf-venue">American Geophysical Union · New Orleans, LA</div>
+      </div>
+    </div>
+    <div class="conf-item">
+      <div class="conf-role-wrap">
+        <span class="conf-role conf-role-chair">Panel Chair</span>
+        <div class="conf-year-tag">AAG 2025</div>
+      </div>
+      <div>
+        <div class="conf-title">Towards a Sustainable Urban Climate: Confronting Heat and Air Pollution Challenges</div>
+        <div class="conf-venue">American Association of Geographers · Detroit, MI</div>
+      </div>
+    </div>
+    <div class="conf-item">
+      <div class="conf-role-wrap">
+        <span class="conf-role conf-role-chair">Co-Chair</span>
+        <span class="conf-role conf-role-organizer">Organizer</span>
+        <div class="conf-year-tag">AAG 2025</div>
+      </div>
+      <div>
+        <div class="conf-title">Navigating the Urban Heat Crisis (1&amp;2): Science, Solutions, and Social Equity</div>
+        <div class="conf-venue">American Association of Geographers · Detroit, MI</div>
+      </div>
+    </div>
+    <div class="conf-item">
+      <div class="conf-role-wrap">
+        <span class="conf-role conf-role-chair">Co-Chair</span>
+        <span class="conf-role conf-role-organizer">Organizer</span>
+        <div class="conf-year-tag">AAG 2024</div>
+      </div>
+      <div>
+        <div class="conf-title">Environmental Data Deserts (1&amp;2): Understanding the Causes and Consequences of the Unequal Coverage of Environmental Monitoring Networks</div>
+        <div class="conf-venue">American Association of Geographers · Honolulu, HI</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHING -->
+<section class="section section-alt" id="teaching">
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <h2 class="section-title">Teaching &amp; Mentorship</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="teach-list">
+    <div class="teach-item">
+      <div class="teach-date">Oct 2025</div>
+      <div>
+        <div class="teach-title">Invited Lecturer — CGF 194: Introduction to Climate Futures<span class="rating-pill">5.0 / 5</span></div>
+        <div class="teach-detail">College of Global Futures, Arizona State University · 71 students</div>
+      </div>
+    </div>
+    <div class="teach-item">
+      <div class="teach-date">Oct 2025</div>
+      <div>
+        <div class="teach-title">Invited Lecturer — GIS 205: Geographic Information Science I<span class="rating-pill">4.45 / 5</span></div>
+        <div class="teach-detail">School of Geographical Sciences &amp; Urban Planning, ASU · 41 students</div>
+      </div>
+    </div>
+    <div class="teach-item">
+      <div class="teach-date">2018–2020</div>
+      <div>
+        <div class="teach-title">Teaching Assistant — Global Geography, Remote Sensing, GIS</div>
+        <div class="teach-detail">Department of Geosciences, Auburn University · Graded, assisted labs, proctored, and lectured</div>
+      </div>
+    </div>
+    <div class="teach-item">
+      <div class="teach-date">2024</div>
+      <div>
+        <div class="teach-title">Mentor — Megan Henriksen, MAS-GIS Capstone (ASU)</div>
+        <div class="teach-detail">Air Temperature Variation in Arizona through Machine Learning</div>
+      </div>
+    </div>
+    <div class="teach-item">
+      <div class="teach-date">2024</div>
+      <div>
+        <div class="teach-title">Mentor — Trevon Chow, High School (BASIS Ahwatukee)</div>
+        <div class="teach-detail">Urban Heat Island (UHI) project, Phoenix, Arizona</div>
+      </div>
+    </div>
+    <div class="teach-item">
+      <div class="teach-date">2024</div>
+      <div>
+        <div class="teach-title">Mentor — Aston Dolce, High School (BASIS Scottsdale)</div>
+        <div class="teach-detail">Urban Climate Research mentorship</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-num">07</span>
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-category">GIS &amp; Remote Sensing</div>
+      <div class="skill-items">
+        <div class="skill-item">ArcGIS Pro · QGIS</div>
+        <div class="skill-item">ERDAS Imagine · eCognition</div>
+        <div class="skill-item">CloudCompare · Pix4D</div>
+        <div class="skill-item">Google Earth Engine</div>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-category">Programming</div>
+      <div class="skill-items">
+        <div class="skill-item">Python · R · JavaScript</div>
+        <div class="skill-item">HTML · Git</div>
+        <div class="skill-item">VS Code · IntelliJ IDEA</div>
+        <div class="skill-item">Windows · Linux · macOS</div>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-category">Machine Learning</div>
+      <div class="skill-items">
+        <div class="skill-item">XGBoost · Random Forest</div>
+        <div class="skill-item">SVM · KNN · Decision Tree</div>
+        <div class="skill-item">PCA · DBSCAN · K-Means</div>
+        <div class="skill-item">Ridge · LASSO · ElasticNet</div>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-category">Deep Learning &amp; HPC</div>
+      <div class="skill-items">
+        <div class="skill-item">TensorFlow · PyTorch · Keras</div>
+        <div class="skill-item">VGG · ResNet (CNN)</div>
+        <div class="skill-item">Sol Supercomputer (ASU)</div>
+        <div class="skill-item">ARGO/Hopper (GMU) · Google Colab</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEDIA -->
+<section class="section section-alt">
+  <div class="section-header">
+    <span class="section-num">08</span>
+    <h2 class="section-title">In the Media</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="media-list">
+    <div class="media-card">
+      <div class="media-source">ASU News · 2025</div>
+      <div class="media-headline">ASU researcher calls attention to overlooked extreme heat issue — its effect on reproductive health</div>
+    </div>
+    <div class="media-card">
+      <div class="media-source">USA Today · 2024</div>
+      <div class="media-headline">How to measure heat correctly, according to scientists, and why it matters</div>
+    </div>
+    <div class="media-card">
+      <div class="media-source">AZ Central · 2024</div>
+      <div class="media-headline">How Phoenix is paving the way on urban heat research and mitigation</div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENCES -->
+<section class="section" id="contact">
+  <div class="section-header">
+    <span class="section-num">09</span>
+    <h2 class="section-title">References</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="ref-grid">
+    <div class="ref-card">
+      <div class="ref-name">David J. Sailor</div>
+      <div class="ref-title">Professor and Director<br>School of Geographical Sciences &amp; Urban Planning<br>Arizona State University</div>
+      <div class="ref-email">David.Sailor@asu.edu</div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-name">Aaron B. Flores</div>
+      <div class="ref-title">Assistant Professor<br>School of Geographical Sciences &amp; Urban Planning<br>Arizona State University</div>
+      <div class="ref-email">aaron.b.flores@asu.edu</div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-name">Chandana Mitra</div>
+      <div class="ref-title">Associate Professor &amp; Graduate Program Officer<br>Department of Geosciences<br>Auburn University</div>
+      <div class="ref-email">czm0033@auburn.edu</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-name">Alamin Molla, M.Sc.</div>
+    <div class="footer-sub">Ph.D. Candidate in GIScience · Arizona State University</div>
+    <div class="footer-contact">
+      <a href="mailto:amolla@asu.edu">amolla@asu.edu</a> · 334-275-5734<br>
+      Lattie F. Coor Hall, Room 5549, Tempe AZ 85281
+    </div>
+  </div>
+  <div class="footer-links">
+    <a class="footer-link" href="https://sites.google.com/view/alaminmolla/home" target="_blank">Google Site ↗</a>
+    <a class="footer-link" href="https://scholar.google.com/citations?user=LeIyUV4AAAAJ&hl=en" target="_blank">Google Scholar ↗</a>
+    <a class="footer-link" href="https://www.researchgate.net/profile/Alamin-Molla" target="_blank">ResearchGate ↗</a>
+    <a class="footer-link" href="https://www.linkedin.com/in/alamin-molla-051397a7/" target="_blank">LinkedIn ↗</a>
+    <a class="footer-link" href="https://github.com/AlaminMolla-Geospatial" target="_blank">GitHub ↗</a>
+    <a class="footer-link" href="https://search.asu.edu/profile/4671024" target="_blank">ASU Profile ↗</a>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <p>© 2026 Alamin Molla · Urban Scientist · GIScience Ph.D. Candidate</p>
+  <p>Built with precision for academic excellence</p>
+</div>
+
+</body>
+</html>
