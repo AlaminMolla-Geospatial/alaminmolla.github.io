@@ -26,7 +26,6 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -38,7 +37,6 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ── ANIMATIONS ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -46,10 +44,6 @@
   @keyframes fadeIn {
     from { opacity: 0; }
     to   { opacity: 1; }
-  }
-  @keyframes lineGrow {
-    from { width: 0; }
-    to   { width: 100%; }
   }
   .reveal { animation: fadeUp 0.7s ease both; }
   .reveal-1 { animation-delay: 0.1s; }
@@ -113,7 +107,7 @@
   /* ── HERO ── */
   .hero {
     display: grid;
-    grid-template-columns: 1fr 340px;
+    grid-template-columns: 1fr 320px;
     gap: 0;
     min-height: 88vh;
     border-bottom: 1px solid var(--border);
@@ -132,11 +126,7 @@
     margin-bottom: 24px;
     animation: fadeUp 0.6s ease 0.1s both;
   }
-  .eyebrow-line {
-    width: 32px;
-    height: 1px;
-    background: var(--accent);
-  }
+  .eyebrow-line { width: 32px; height: 1px; background: var(--accent); }
   .eyebrow-text {
     font-family: 'DM Mono', monospace;
     font-size: 11px;
@@ -190,16 +180,8 @@
     color: var(--ink-muted);
     letter-spacing: 0.2px;
   }
-  .badge-green {
-    background: var(--accent-pale);
-    border-color: var(--accent-light);
-    color: var(--accent);
-  }
-  .badge-gold {
-    background: var(--gold-pale);
-    border-color: var(--gold);
-    color: var(--gold);
-  }
+  .badge-green { background: var(--accent-pale); border-color: var(--accent-light); color: var(--accent); }
+  .badge-gold  { background: var(--gold-pale);   border-color: var(--gold);         color: var(--gold); }
   .hero-actions {
     display: flex;
     gap: 12px;
@@ -207,110 +189,61 @@
     animation: fadeUp 0.7s ease 0.6s both;
   }
   .btn-primary {
-    font-size: 13px;
-    font-weight: 500;
-    padding: 11px 28px;
-    border-radius: 4px;
-    background: var(--accent);
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: background 0.2s;
-    letter-spacing: 0.2px;
+    font-size: 13px; font-weight: 500; padding: 11px 28px;
+    border-radius: 4px; background: var(--accent); color: #fff;
+    text-decoration: none; border: none; cursor: pointer;
+    transition: background 0.2s; letter-spacing: 0.2px;
   }
   .btn-primary:hover { background: var(--accent-light); }
   .btn-outline {
-    font-size: 13px;
-    font-weight: 400;
-    padding: 11px 28px;
-    border-radius: 4px;
-    background: transparent;
-    color: var(--ink);
-    text-decoration: none;
-    border: 1px solid var(--border-strong);
-    cursor: pointer;
-    transition: all 0.2s;
+    font-size: 13px; font-weight: 400; padding: 11px 28px;
+    border-radius: 4px; background: transparent; color: var(--ink);
+    text-decoration: none; border: 1px solid var(--border-strong);
+    cursor: pointer; transition: all 0.2s;
   }
   .btn-outline:hover { background: var(--paper-warm); }
 
-  /* ── HERO RIGHT ── */
+  /* ── HERO RIGHT (sidebar) ── */
   .hero-right {
-    padding: 48px 36px;
+    padding: 48px 32px;
     background: var(--paper-warm);
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 22px;
     animation: fadeIn 1s ease 0.4s both;
   }
   .profile-avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    width: 90px; height: 90px; border-radius: 50%;
     background: var(--accent);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
-    font-weight: 500;
-    color: #fff;
-    margin-bottom: 4px;
-  }
-  .profile-affil {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--ink);
+    font-size: 30px; font-weight: 500; color: #fff;
     margin-bottom: 2px;
   }
-  .profile-sub {
-    font-size: 12px;
-    color: var(--ink-muted);
-    line-height: 1.5;
+  .profile-affil { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 2px; }
+  .profile-sub   { font-size: 12px; color: var(--ink-muted); line-height: 1.5; }
+
+  /* contact details — sidebar only */
+  .contact-block { border-top: 1px solid var(--border); padding-top: 18px; }
+  .contact-row   { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 9px; }
+  .contact-icon  {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    color: var(--ink-faint); letter-spacing: 1px; text-transform: uppercase;
+    min-width: 44px; padding-top: 1px;
   }
-  .contact-block {
-    border-top: 1px solid var(--border);
-    padding-top: 20px;
-  }
-  .contact-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-  .contact-icon {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    color: var(--ink-faint);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    min-width: 40px;
-    padding-top: 1px;
-  }
-  .contact-val {
-    font-size: 12px;
-    color: var(--ink-muted);
-  }
-  .contact-val a { color: var(--accent-light); text-decoration: none; }
+  .contact-val      { font-size: 12px; color: var(--ink-muted); }
+  .contact-val a    { color: var(--accent-light); text-decoration: none; }
+
+  /* social links — sidebar only */
   .social-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 7px;
-    border-top: 1px solid var(--border);
-    padding-top: 20px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 7px;
+    border-top: 1px solid var(--border); padding-top: 18px;
   }
   .social-btn {
-    font-size: 11px;
-    font-weight: 400;
-    padding: 7px 10px;
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-    background: var(--paper-card);
-    color: var(--ink-muted);
-    text-decoration: none;
-    text-align: center;
-    transition: all 0.2s;
-    cursor: pointer;
+    font-size: 11px; font-weight: 400; padding: 7px 10px;
+    border-radius: var(--radius); border: 1px solid var(--border);
+    background: var(--paper-card); color: var(--ink-muted);
+    text-decoration: none; text-align: center; transition: all 0.2s;
   }
   .social-btn:hover { border-color: var(--accent-light); color: var(--accent); background: var(--accent-pale); }
 
@@ -318,7 +251,7 @@
   .stat-bar {
     border-bottom: 1px solid var(--border);
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     background: var(--ink);
   }
   .stat-item {
@@ -329,394 +262,189 @@
   .stat-item:last-child { border-right: none; }
   .stat-num {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 38px;
-    font-weight: 500;
-    color: #fff;
-    line-height: 1;
-    margin-bottom: 4px;
+    font-size: 38px; font-weight: 500; color: #fff;
+    line-height: 1; margin-bottom: 4px;
   }
-  .stat-label {
-    font-size: 11px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.5);
-    letter-spacing: 0.3px;
-  }
+  .stat-label { font-size: 11px; font-weight: 300; color: rgba(255,255,255,0.5); letter-spacing: 0.3px; }
 
   /* ── SECTIONS ── */
-  .section {
-    padding: 72px 56px;
-    border-bottom: 1px solid var(--border);
-  }
+  .section { padding: 72px 56px; border-bottom: 1px solid var(--border); }
   .section-alt { background: var(--paper-warm); }
-  .section-header {
-    display: flex;
-    align-items: baseline;
-    gap: 16px;
-    margin-bottom: 48px;
-  }
-  .section-num {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--ink-faint);
-    letter-spacing: 1px;
-  }
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 34px;
-    font-weight: 500;
-    color: var(--ink);
-    letter-spacing: -0.3px;
-  }
-  .section-line {
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
+  .section-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 48px; }
+  .section-num   { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink-faint); letter-spacing: 1px; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 500; color: var(--ink); letter-spacing: -0.3px; }
+  .section-line  { flex: 1; height: 1px; background: var(--border); }
 
   /* ── ABOUT ── */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 56px;
-    align-items: start;
-  }
-  .about-text p {
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 1.85;
-    color: var(--ink-muted);
-    margin-bottom: 16px;
-  }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+  .about-text p { font-size: 15px; font-weight: 300; line-height: 1.85; color: var(--ink-muted); margin-bottom: 16px; }
   .about-text p strong { font-weight: 500; color: var(--ink); }
-  .research-areas {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
+  .research-areas { display: flex; flex-direction: column; gap: 12px; }
   .research-area {
-    padding: 16px 20px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    background: var(--paper-card);
-    transition: border-color 0.2s;
+    padding: 16px 20px; border: 1px solid var(--border);
+    border-radius: var(--radius-lg); background: var(--paper-card); transition: border-color 0.2s;
   }
   .research-area:hover { border-color: var(--accent-light); }
-  .ra-category {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--accent-light);
-    margin-bottom: 4px;
-  }
-  .ra-items {
-    font-size: 12px;
-    color: var(--ink-muted);
-    line-height: 1.6;
-  }
+  .ra-category { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent-light); margin-bottom: 4px; }
+  .ra-items    { font-size: 12px; color: var(--ink-muted); line-height: 1.6; }
 
   /* ── EDUCATION ── */
-  .edu-list { display: flex; flex-direction: column; gap: 0; }
+  .edu-list { display: flex; flex-direction: column; }
   .edu-item {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 32px;
-    padding: 28px 0;
-    border-bottom: 1px solid var(--border);
-    align-items: start;
+    display: grid; grid-template-columns: 180px 1fr; gap: 32px;
+    padding: 28px 0; border-bottom: 1px solid var(--border); align-items: start;
   }
   .edu-item:first-child { border-top: 1px solid var(--border); }
-  .edu-year {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--ink-faint);
-    letter-spacing: 1px;
-    padding-top: 3px;
-  }
-  .edu-degree {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 19px;
-    font-weight: 500;
-    line-height: 1.3;
-    margin-bottom: 4px;
-  }
-  .edu-institution {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--accent-light);
-    margin-bottom: 4px;
-  }
-  .edu-thesis {
-    font-size: 12px;
-    font-style: italic;
-    color: var(--ink-muted);
-    line-height: 1.5;
-  }
+  .edu-year        { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink-faint); letter-spacing: 1px; padding-top: 3px; }
+  .edu-degree      { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 500; line-height: 1.3; margin-bottom: 4px; }
+  .edu-institution { font-size: 13px; font-weight: 500; color: var(--accent-light); margin-bottom: 4px; }
+  .edu-thesis      { font-size: 12px; font-style: italic; color: var(--ink-muted); line-height: 1.5; }
+  .edu-advisor     { font-size: 12px; color: var(--ink-muted); margin-top: 4px; }
+  .edu-advisor span { font-weight: 500; color: var(--ink); }
 
   /* ── PUBLICATIONS ── */
-  .pub-list { display: flex; flex-direction: column; gap: 0; }
+  .pub-list { display: flex; flex-direction: column; }
   .pub-item {
-    display: grid;
-    grid-template-columns: 56px 1fr auto;
-    gap: 20px 28px;
-    padding: 24px 0;
-    border-bottom: 1px solid var(--border);
-    align-items: start;
-    transition: background 0.15s;
+    display: grid; grid-template-columns: 56px 1fr auto;
+    gap: 20px 28px; padding: 24px 0; border-bottom: 1px solid var(--border);
+    align-items: start; transition: background 0.15s;
   }
   .pub-item:first-child { border-top: 1px solid var(--border); }
   .pub-item:hover { background: var(--accent-pale); margin: 0 -20px; padding: 24px 20px; border-radius: var(--radius); }
-  .pub-num {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--ink-faint);
-    padding-top: 3px;
-    text-align: right;
-  }
-  .pub-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 17px;
-    font-weight: 500;
-    line-height: 1.4;
-    color: var(--ink);
-    margin-bottom: 5px;
-  }
-  .pub-meta {
-    font-size: 12px;
-    color: var(--ink-muted);
-    margin-bottom: 8px;
-  }
+  .pub-num   { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink-faint); padding-top: 3px; text-align: right; }
+  .pub-title { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 500; line-height: 1.4; color: var(--ink); margin-bottom: 5px; }
+  .pub-title a { color: inherit; text-decoration: none; }
+  .pub-title a:hover { color: var(--accent-light); }
+  .pub-meta  { font-size: 12px; color: var(--ink-muted); margin-bottom: 8px; }
   .pub-meta em { font-style: italic; color: var(--ink); }
-  .pub-tags { display: flex; gap: 6px; flex-wrap: wrap; }
-  .pub-tag {
-    font-size: 10px;
-    padding: 3px 9px;
-    border-radius: 20px;
-    border: 1px solid var(--border);
-    color: var(--ink-muted);
-  }
-  .tag-sole { border-color: var(--accent); color: var(--accent); background: var(--accent-pale); }
-  .tag-gold { border-color: var(--gold); color: var(--gold); background: var(--gold-pale); }
-  .pub-year-badge {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--ink-faint);
-    white-space: nowrap;
-    padding-top: 3px;
-  }
+  .pub-tags  { display: flex; gap: 6px; flex-wrap: wrap; }
+  .pub-tag   { font-size: 10px; padding: 3px 9px; border-radius: 20px; border: 1px solid var(--border); color: var(--ink-muted); }
+  .tag-sole  { border-color: var(--accent); color: var(--accent); background: var(--accent-pale); }
+  .tag-gold  { border-color: var(--gold);   color: var(--gold);   background: var(--gold-pale); }
+  .pub-year-badge { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink-faint); white-space: nowrap; padding-top: 3px; }
 
   /* ── AWARDS ── */
-  .awards-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
+  .awards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .award-card {
-    padding: 20px 22px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    background: var(--paper-card);
-    transition: all 0.2s;
+    padding: 20px 22px; border: 1px solid var(--border);
+    border-radius: var(--radius-lg); background: var(--paper-card); transition: all 0.2s;
   }
   .award-card:hover { border-color: var(--gold); transform: translateY(-2px); }
-  .award-amount {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    font-weight: 500;
-    color: var(--gold);
-    margin-bottom: 4px;
-  }
-  .award-name {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--ink);
-    margin-bottom: 3px;
-    line-height: 1.4;
-  }
-  .award-org {
-    font-size: 11px;
-    color: var(--ink-muted);
-  }
-  .award-year {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    color: var(--ink-faint);
-    margin-top: 6px;
-  }
+  .award-amount { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 500; color: var(--gold); margin-bottom: 4px; }
+  .award-name   { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 3px; line-height: 1.4; }
+  .award-org    { font-size: 11px; color: var(--ink-muted); }
+  .award-year   { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--ink-faint); margin-top: 6px; }
 
   /* ── CONFERENCE ── */
-  .conf-list { display: flex; flex-direction: column; gap: 0; }
+  .conf-list { display: flex; flex-direction: column; }
   .conf-item {
-    display: grid;
-    grid-template-columns: 140px 1fr;
-    gap: 24px;
-    padding: 18px 0;
-    border-bottom: 1px solid var(--border);
-    align-items: start;
+    display: grid; grid-template-columns: 140px 1fr; gap: 24px;
+    padding: 18px 0; border-bottom: 1px solid var(--border); align-items: start;
   }
   .conf-item:first-child { border-top: 1px solid var(--border); }
-  .conf-role-wrap { display: flex; flex-direction: column; gap: 4px; }
-  .conf-role {
-    font-size: 10px;
-    font-weight: 500;
-    padding: 3px 9px;
-    border-radius: 20px;
-    border: 1px solid var(--border-strong);
-    color: var(--ink-muted);
-    display: inline-block;
-    text-align: center;
-  }
-  .conf-role-chair { border-color: var(--accent-light); color: var(--accent); background: var(--accent-pale); }
+  .conf-role-wrap  { display: flex; flex-direction: column; gap: 4px; }
+  .conf-role       { font-size: 10px; font-weight: 500; padding: 3px 9px; border-radius: 20px; border: 1px solid var(--border-strong); color: var(--ink-muted); display: inline-block; text-align: center; }
+  .conf-role-chair     { border-color: var(--accent-light); color: var(--accent); background: var(--accent-pale); }
   .conf-role-organizer { border-color: var(--gold); color: var(--gold); background: var(--gold-pale); }
-  .conf-year-tag { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--ink-faint); text-align: center; margin-top: 4px; }
-  .conf-title { font-size: 13px; font-weight: 500; color: var(--ink); line-height: 1.45; margin-bottom: 3px; }
-  .conf-venue { font-size: 12px; color: var(--ink-muted); }
+  .conf-year-tag   { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--ink-faint); text-align: center; margin-top: 4px; }
+  .conf-title  { font-size: 13px; font-weight: 500; color: var(--ink); line-height: 1.45; margin-bottom: 3px; }
+  .conf-venue  { font-size: 12px; color: var(--ink-muted); }
 
   /* ── SKILLS ── */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-  }
-  .skill-card {
-    padding: 20px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    background: var(--paper-card);
-  }
-  .skill-category {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    color: var(--accent-light);
-    margin-bottom: 10px;
-  }
-  .skill-items {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-  .skill-item { font-size: 12px; color: var(--ink-muted); }
+  .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .skill-card  { padding: 20px; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--paper-card); }
+  .skill-category { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--accent-light); margin-bottom: 10px; }
+  .skill-items { display: flex; flex-direction: column; gap: 4px; }
+  .skill-item  { font-size: 12px; color: var(--ink-muted); }
 
   /* ── MEDIA ── */
   .media-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .media-card {
-    padding: 20px 22px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    background: var(--paper-card);
-    transition: all 0.2s;
-    cursor: pointer;
+    padding: 20px 22px; border: 1px solid var(--border);
+    border-radius: var(--radius-lg); background: var(--paper-card); transition: all 0.2s;
   }
   .media-card:hover { border-color: var(--accent-light); transform: translateY(-2px); }
-  .media-source {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--accent-light);
-    margin-bottom: 8px;
-  }
-  .media-headline {
-    font-size: 13px;
-    font-weight: 500;
-    line-height: 1.5;
-    color: var(--ink);
-    text-decoration: none;
-    display: block;
-  }
+  .media-source   { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent-light); margin-bottom: 8px; }
+  .media-headline { font-size: 13px; font-weight: 500; line-height: 1.5; color: var(--ink); text-decoration: none; display: block; }
   .media-headline:hover { color: var(--accent-light); }
 
   /* ── TEACHING ── */
-  .teach-list { display: flex; flex-direction: column; gap: 14px; }
+  .teach-list { display: flex; flex-direction: column; }
   .teach-item {
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 20px;
-    padding: 16px 0;
-    border-bottom: 1px solid var(--border);
-    align-items: start;
+    display: grid; grid-template-columns: 110px 1fr; gap: 20px;
+    padding: 16px 0; border-bottom: 1px solid var(--border); align-items: start;
   }
   .teach-item:first-child { border-top: 1px solid var(--border); }
-  .teach-date {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--ink-faint);
-    padding-top: 2px;
-  }
-  .teach-title { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 3px; }
+  .teach-date   { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--ink-faint); padding-top: 2px; }
+  .teach-title  { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 3px; }
   .teach-detail { font-size: 12px; color: var(--ink-muted); }
-  .rating-pill {
-    display: inline-block;
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    padding: 2px 8px;
-    border-radius: 20px;
-    background: var(--accent-pale);
-    color: var(--accent);
-    border: 1px solid var(--accent-light);
-    margin-left: 8px;
+  .rating-pill  {
+    display: inline-block; font-family: 'DM Mono', monospace; font-size: 10px;
+    padding: 2px 8px; border-radius: 20px; background: var(--accent-pale);
+    color: var(--accent); border: 1px solid var(--accent-light); margin-left: 8px;
   }
+
+  /* ── CURRENT PROJECT BLOCK ── */
+  .project-block {
+    background: var(--accent);
+    border-radius: var(--radius-lg);
+    padding: 24px 28px;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+  .project-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 8px; }
+  .project-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 500; line-height: 1.3; margin-bottom: 8px; }
+  .project-desc  { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.75); line-height: 1.7; }
+  .project-funder { font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.45); margin-top: 12px; letter-spacing: 0.5px; }
+
+  /* ── REFERENCES ── */
+  .ref-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .ref-card  { padding: 20px 22px; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--paper-card); }
+  .ref-name  { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+  .ref-title { font-size: 12px; color: var(--ink-muted); line-height: 1.5; margin-bottom: 10px; }
+  .ref-email { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--accent-light); }
 
   /* ── FOOTER ── */
   footer {
     background: var(--ink);
-    padding: 48px 56px;
+    padding: 48px 56px 32px;
+  }
+  .footer-inner {
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 32px;
     align-items: start;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 20px;
   }
-  .footer-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    font-weight: 500;
-    color: #fff;
-    margin-bottom: 6px;
-  }
-  .footer-sub { font-size: 12px; color: rgba(255,255,255,0.45); margin-bottom: 16px; }
+  .footer-name    { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 500; color: #fff; margin-bottom: 6px; }
+  .footer-sub     { font-size: 12px; color: rgba(255,255,255,0.45); margin-bottom: 16px; }
   .footer-contact { font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.8; }
   .footer-contact a { color: rgba(255,255,255,0.7); text-decoration: none; }
-  .footer-links { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
-  .footer-link {
-    font-size: 12px;
-    color: rgba(255,255,255,0.5);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .footer-link:hover { color: #fff; }
-  .footer-bottom {
-    background: var(--ink);
-    border-top: 1px solid rgba(255,255,255,0.06);
-    padding: 16px 56px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .footer-bottom p { font-size: 11px; color: rgba(255,255,255,0.25); }
 
-  /* ── REFERENCES ── */
-  .ref-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .ref-card {
-    padding: 20px 22px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    background: var(--paper-card);
-  }
-  .ref-name { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
-  .ref-title { font-size: 12px; color: var(--ink-muted); line-height: 1.5; margin-bottom: 10px; }
-  .ref-email { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--accent-light); }
+  /* Condensed social strip in footer — no duplication of full grid */
+  .footer-social  { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; margin-top: 20px; }
+  .footer-social a { font-size: 12px; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+  .footer-social a:hover { color: #fff; }
 
+  .footer-orcid   { font-family: 'DM Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 8px; }
+  .footer-orcid a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  .footer-orcid a:hover { color: #fff; }
+
+  .footer-bottom  { display: flex; justify-content: space-between; align-items: center; }
+  .footer-bottom p { font-size: 11px; color: rgba(255,255,255,0.2); }
+
+  /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     .hero { grid-template-columns: 1fr; }
     .hero-right { display: none; }
-    .stat-bar { grid-template-columns: repeat(3, 1fr); }
+    .stat-bar { grid-template-columns: repeat(2, 1fr); }
     .about-grid, .awards-grid, .skills-grid, .media-list, .ref-grid { grid-template-columns: 1fr 1fr; }
     .section { padding: 48px 28px; }
     nav { padding: 0 20px; }
-    footer { grid-template-columns: 1fr; padding: 36px 28px; }
-    .footer-links { align-items: flex-start; }
+    footer { padding: 36px 28px 24px; }
+    .footer-inner { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -727,7 +455,7 @@
   <a href="#" class="nav-brand">Alamin Molla</a>
   <div class="nav-links">
     <a href="#about">About</a>
-    <a href="#research">Research</a>
+    <a href="#education">Education</a>
     <a href="#publications">Publications</a>
     <a href="#awards">Awards</a>
     <a href="#teaching">Teaching</a>
@@ -752,20 +480,22 @@
       <span class="badge badge-green">NASA Panel Reviewer</span>
       <span class="badge badge-gold">AAG $1.2K Award 2026</span>
       <span class="badge">FAA Certified Drone Pilot</span>
-      <span class="badge">9 Peer-Reviewed Publications</span>
+      <span class="badge badge-gold">ASU President's Recognition · 2025</span>
     </div>
+    <!-- Actions: CV download + Scholar only — contact & social live in sidebar/footer -->
     <div class="hero-actions">
-      <a href="mailto:amolla@asu.edu" class="btn-primary">Get in Touch</a>
-      <a href="https://sites.google.com/view/alaminmolla/home" target="_blank" class="btn-outline">Google Site ↗</a>
-      <a href="https://scholar.google.com/citations?user=LeIyUV4AAAAJ&hl=en" target="_blank" class="btn-outline">Google Scholar ↗</a>
+
     </div>
   </div>
+
+  <!-- SIDEBAR — single source of truth for contact + socials -->
   <div class="hero-right">
     <div class="profile-avatar">AM</div>
     <div>
       <div class="profile-affil">Arizona State University</div>
-      <div class="profile-sub">School of Geographical Sciences<br>& Urban Planning<br>Ph.D. Expected: Spring 2027</div>
+      <div class="profile-sub">School of Geographical Sciences<br>&amp; Urban Planning<br>Ph.D. Expected: Spring 2027</div>
     </div>
+
     <div class="contact-block">
       <div class="contact-row">
         <span class="contact-icon">Email</span>
@@ -777,9 +507,14 @@
       </div>
       <div class="contact-row">
         <span class="contact-icon">Office</span>
-        <span class="contact-val">Lattie F. Coor Hall, Room 5549<br>975 S Myrtle Ave, Tempe AZ</span>
+        <span class="contact-val">Lattie F. Coor Hall, Rm 5549<br>975 S Myrtle Ave, Tempe AZ</span>
+      </div>
+      <div class="contact-row">
+        <span class="contact-icon">ORCID</span>
+        <span class="contact-val"><a href="https://orcid.org/0000-0002-8718-6885" target="_blank">0000-0002-8718-6885</a></span>
       </div>
     </div>
+
     <div class="social-grid">
       <a class="social-btn" href="https://www.linkedin.com/in/alamin-molla-051397a7/" target="_blank">LinkedIn</a>
       <a class="social-btn" href="https://scholar.google.com/citations?user=LeIyUV4AAAAJ&hl=en" target="_blank">Scholar</a>
@@ -791,7 +526,7 @@
   </div>
 </section>
 
-<!-- STAT BAR -->
+<!-- STAT BAR — removed "2027" (duplicates hero eyebrow); added citations -->
 <div class="stat-bar">
   <div class="stat-item reveal reveal-1">
     <div class="stat-num">9</div>
@@ -809,10 +544,6 @@
     <div class="stat-num">3</div>
     <div class="stat-label">Students mentored</div>
   </div>
-  <div class="stat-item reveal reveal-5">
-    <div class="stat-num">2027</div>
-    <div class="stat-label">Expected Ph.D. graduation</div>
-  </div>
 </div>
 
 <!-- ABOUT -->
@@ -824,10 +555,18 @@
   </div>
   <div class="about-grid">
     <div class="about-text">
-      <p>I am a <strong>Ph.D. candidate in Geographic Information Science (GIScience)</strong> at the School of Geographical Sciences and Urban Planning at Arizona State University, with an expected completion in Spring 2027. My dissertation focuses on machine learning and spatial statistical modeling for investigating air temperature variation and exposure patterns.</p>
+      <p>I am a <strong>Ph.D. candidate in Geographic Information Science (GIScience)</strong> at the School of Geographical Sciences and Urban Planning at Arizona State University, with an expected completion in Spring 2027. My dissertation focuses on machine learning and spatial statistical modeling for investigating air temperature variation and exposure patterns, advised by <strong>Prof. David J. Sailor</strong> and co-advised by <strong>Prof. Aaron B. Flores</strong>.</p>
       <p>My academic journey spans two continents. I earned a <strong>Bachelor of Urban and Rural Planning</strong> from Khulna University, Bangladesh; an <strong>M.Sc. in Geography</strong> from Auburn University; and an <strong>M.Sc. in Geoinformatics &amp; Geospatial Intelligence</strong> from George Mason University.</p>
       <p>I serve as a <strong>Graduate Research Assistant at the Urban Climate Research Center</strong>, contributing to the DOE-funded Southwest Urban Integrated Field Laboratory (SW-IFL) — a multi-million dollar initiative uniting Arizona's three public research universities, national laboratories, and community stakeholders. I am also an <strong>FAA-certified drone pilot</strong> and have reviewed proposals for NASA and panels for Columbia University.</p>
       <p>Beyond research, I actively shape the academic community as a <strong>session chair, co-chair, and organizer</strong> at the American Association of Geographers (AAG) and the American Geophysical Union (AGU), and mentor the next generation of urban scientists.</p>
+
+      <!-- Current funded project — fills blank left by one-liner -->
+      <div class="project-block" style="margin-top: 24px;">
+        <div class="project-label">Current Research Project</div>
+        <div class="project-title">Southwest Urban Integrated Field Laboratory (SW-IFL)</div>
+        <div class="project-desc">A DOE-funded multi-institutional effort to advance understanding of urban energy, heat, and air quality in the Phoenix–Tucson corridor. My role involves deploying sensor networks, conducting drone-based thermal surveys, and developing GeoAI models to quantify intra-urban temperature gradients across sociodemographic boundaries.</div>
+        <div class="project-funder">FUNDED BY · U.S. Department of Energy · Office of Science · Urban Integrated Field Laboratories Program</div>
+      </div>
     </div>
     <div class="research-areas">
       <div class="research-area">
@@ -846,6 +585,7 @@
         <div class="ra-category">Justice &amp; Health</div>
         <div class="ra-items">Climate Justice · Environmental Justice · Public Health · Socio-Demographic Inequalities</div>
       </div>
+
     </div>
   </div>
 </section>
@@ -863,7 +603,8 @@
       <div>
         <div class="edu-degree">Ph.D. in Geographic Information Science</div>
         <div class="edu-institution">Arizona State University, Tempe, AZ</div>
-        <div class="edu-thesis">Dissertation (tentative): Machine Learning and spatial statistical modelling for investigating air temperature variation and exposure patterns.</div>
+        <div class="edu-thesis">Dissertation: Machine Learning and spatial statistical modelling for investigating air temperature variation and exposure patterns.</div>
+        <div class="edu-advisor">Co-Chair: <span>Prof. David J. Sailor</span> · Co-Chair: <span>Prof. Aaron B. Flores</span> · Member: <span>Heather Baier</span></div>
       </div>
     </div>
     <div class="edu-item">
@@ -872,6 +613,7 @@
         <div class="edu-degree">M.S. in Geoinformatics &amp; Geospatial Intelligence</div>
         <div class="edu-institution">George Mason University, Fairfax, VA</div>
         <div class="edu-thesis">Project: Improved understanding of precipitation patterns over multiple urban systems.</div>
+        <div class="edu-advisor">Advisor: <span>Prof. Liping Di</span></div>
       </div>
     </div>
     <div class="edu-item">
@@ -880,6 +622,7 @@
         <div class="edu-degree">M.Sc. in Geography</div>
         <div class="edu-institution">Auburn University, Auburn, AL</div>
         <div class="edu-thesis">Thesis: Towards Urban Sustainability — Stormwater Management and Solar Power Potential of Auburn University.</div>
+        <div class="edu-advisor">Advisor: <span>Prof. Chandana Mitra</span></div>
       </div>
     </div>
     <div class="edu-item">
@@ -905,11 +648,7 @@
     <div class="pub-item">
       <div class="pub-num">09</div>
       <div>
-        <div class="pub-title">
-          <a href="https://doi.org/10.1016/j.cpas.2025.100001" target="_blank" rel="noopener noreferrer">
-            Urban Climate INTelligence (UCINT): A scalable framework for resilient cities
-          </a>
-        </div>
+        <div class="pub-title"><a href="https://doi.org/10.1016/j.cpas.2025.100001" target="_blank" rel="noopener noreferrer">Urban Climate INTelligence (UCINT): A scalable framework for resilient cities</a></div>
         <div class="pub-meta"><em>Climate Physics and Atmospheric Science: Scientific Insights and Societal Challenges</em> · 1–2, 100001</div>
         <div class="pub-tags">
           <span class="pub-tag tag-sole">Sole Author</span>
@@ -923,11 +662,7 @@
     <div class="pub-item">
       <div class="pub-num">08</div>
       <div>
-        <div class="pub-title">
-          <a href="https://doi.org/10.1016/j.scs.2026.107211" target="_blank" rel="noopener noreferrer">
-            Citizen science coupled with machine learning to quantify green-blue infrastructure cooling potential in Maricopa County, Arizona
-          </a>
-        </div>
+        <div class="pub-title"><a href="https://doi.org/10.1016/j.scs.2026.107211" target="_blank" rel="noopener noreferrer">Citizen science coupled with machine learning to quantify green-blue infrastructure cooling potential in Maricopa County, Arizona</a></div>
         <div class="pub-meta">Molla, Lamer, Sailor · <em>Sustainable Cities and Society</em> 139, 107211</div>
         <div class="pub-tags">
           <span class="pub-tag">Citizen Science</span>
@@ -941,11 +676,7 @@
     <div class="pub-item">
       <div class="pub-num">07</div>
       <div>
-        <div class="pub-title">
-          <a href="https://doi.org/10.1007/s11111-025-00497-4" target="_blank" rel="noopener noreferrer">
-            Addressing data gaps and disparities in access to air quality networks: A case study of Maricopa County, Arizona
-          </a>
-        </div>
+        <div class="pub-title"><a href="https://doi.org/10.1007/s11111-025-00497-4" target="_blank" rel="noopener noreferrer">Addressing data gaps and disparities in access to air quality networks: A case study of Maricopa County, Arizona</a></div>
         <div class="pub-meta">Molla, Flores, Sailor · <em>Population and Environment</em> 47 (3): 27</div>
         <div class="pub-tags">
           <span class="pub-tag">Air Quality</span>
@@ -959,11 +690,7 @@
     <div class="pub-item">
       <div class="pub-num">06</div>
       <div>
-        <div class="pub-title">
-          <a href="https://doi.org/10.1016/j.jtherbio.2025.104158" target="_blank" rel="noopener noreferrer">
-            Extreme heat and human fertility: Amplified challenges in the era of climate change
-          </a>
-        </div>
+        <div class="pub-title"><a href="https://doi.org/10.1016/j.jtherbio.2025.104158" target="_blank" rel="noopener noreferrer">Extreme heat and human fertility: Amplified challenges in the era of climate change</a></div>
         <div class="pub-meta"><em>Journal of Thermal Biology</em> 130: 104158</div>
         <div class="pub-tags">
           <span class="pub-tag tag-sole">Sole Author</span>
@@ -977,11 +704,7 @@
     <div class="pub-item">
       <div class="pub-num">05</div>
       <div>
-        <div class="pub-title">
-          <a href="https://doi.org/10.1016/j.uclim.2024.102276" target="_blank" rel="noopener noreferrer">
-            Exploring air temperature variability and socio-demographic inequalities in heat exposure through machine learning: Maricopa County, Arizona
-          </a>
-        </div>
+        <div class="pub-title"><a href="https://doi.org/10.1016/j.uclim.2024.102276" target="_blank" rel="noopener noreferrer">Exploring air temperature variability and socio-demographic inequalities in heat exposure through machine learning: Maricopa County, Arizona</a></div>
         <div class="pub-meta">Molla, Sailor, Flores · <em>Urban Climate</em> 59: 102276</div>
         <div class="pub-tags">
           <span class="pub-tag">XGBoost</span>
@@ -995,11 +718,7 @@
     <div class="pub-item">
       <div class="pub-num">04</div>
       <div>
-        <div class="pub-title">
-          <a href="https://doi.org/10.1016/j.scs.2024.105799" target="_blank" rel="noopener noreferrer">
-            Multi-criteria decision support framework for outdoor heat stress management in urban environments
-          </a>
-        </div>
+        <div class="pub-title"><a href="https://doi.org/10.1016/j.scs.2024.105799" target="_blank" rel="noopener noreferrer">Multi-criteria decision support framework for outdoor heat stress management in urban environments</a></div>
         <div class="pub-meta">Amaripadath, Molla, Keith, Sailor · <em>Sustainable Cities and Society</em> 114: 105799</div>
         <div class="pub-tags">
           <span class="pub-tag">Heat Stress</span>
@@ -1013,11 +732,7 @@
     <div class="pub-item">
       <div class="pub-num">03</div>
       <div>
-        <div class="pub-title">
-          <a href="https://doi.org/10.1038/s41598-022-18193-w" target="_blank" rel="noopener noreferrer">
-            Evaluating contributions of urbanization and global climate change to urban land surface temperature change: Lagos, Nigeria
-          </a>
-        </div>
+        <div class="pub-title"><a href="https://doi.org/10.1038/s41598-022-18193-w" target="_blank" rel="noopener noreferrer">Evaluating contributions of urbanization and global climate change to urban land surface temperature change: Lagos, Nigeria</a></div>
         <div class="pub-meta">Guo, Di, Zhang, Lin, Chen, Molla · <em>Nature Scientific Reports</em> 12: 14168</div>
         <div class="pub-tags">
           <span class="pub-tag tag-gold">Nature</span>
@@ -1032,11 +747,7 @@
     <div class="pub-item">
       <div class="pub-num">02</div>
       <div>
-        <div class="pub-title">
-          <a href="https://doi.org/10.3390/urbansci6020040" target="_blank" rel="noopener noreferrer">
-            Spatio-temporal responses of precipitation to urbanization with Google Earth Engine: Lagos, Nigeria
-          </a>
-        </div>
+        <div class="pub-title"><a href="https://doi.org/10.3390/urbansci6020040" target="_blank" rel="noopener noreferrer">Spatio-temporal responses of precipitation to urbanization with Google Earth Engine: Lagos, Nigeria</a></div>
         <div class="pub-meta">Molla, Di, Guo, Zhang, Chen · <em>Urban Science</em> 6(2): 40</div>
         <div class="pub-tags">
           <span class="pub-tag">Google Earth Engine</span>
@@ -1050,11 +761,7 @@
     <div class="pub-item">
       <div class="pub-num">01</div>
       <div>
-        <div class="pub-title">
-          <a href="https://doi.org/10.14796/JWMM.C488" target="_blank" rel="noopener noreferrer">
-            Assessment of and solutions to the stormwater management system of Auburn University campus, Alabama
-          </a>
-        </div>
+        <div class="pub-title"><a href="https://doi.org/10.14796/JWMM.C488" target="_blank" rel="noopener noreferrer">Assessment of and solutions to the stormwater management system of Auburn University campus, Alabama</a></div>
         <div class="pub-meta">Molla, Mitra, Vasconcelos · <em>Journal of Water Management Modeling</em></div>
         <div class="pub-tags">
           <span class="pub-tag">Stormwater</span>
@@ -1132,10 +839,34 @@
   </div>
 </section>
 
+<!-- PRESIDENTIAL RECOGNITION -->
+<section class="section">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Presidential Recognition</h2>
+    <div class="section-line"></div>
+  </div>
+  <div style="max-width:780px;">
+    <div style="position:relative;padding:40px 44px;background:var(--ink);border-radius:var(--radius-lg);color:#fff;">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:72px;line-height:0.6;color:var(--accent-light);margin-bottom:24px;">"</div>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400;font-style:italic;line-height:1.65;color:rgba(255,255,255,0.92);margin-bottom:28px;">
+        Your work exemplifies several tenets of our New American University, from taking responsibility for the communities we serve to producing use-based research. I applaud your efforts to help us better understand how extreme heat affects fertility so that, ultimately, policies and interventions can be formed to protect the vulnerable.
+      </p>
+      <div style="display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,0.12);padding-top:20px;">
+        <div style="width:40px;height:40px;border-radius:50%;background:var(--accent-light);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:500;color:#fff;flex-shrink:0;">MC</div>
+        <div>
+          <div style="font-size:13px;font-weight:500;color:#fff;">Michael M. Crow</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.5);">Distinguished Regents President · Arizona State University · June 19, 2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CONFERENCE LEADERSHIP -->
 <section class="section" id="research">
   <div class="section-header">
-    <span class="section-num">05</span>
+    <span class="section-num">06</span>
     <h2 class="section-title">Conference Leadership</h2>
     <div class="section-line"></div>
   </div>
@@ -1210,27 +941,37 @@
 <!-- PEER REVIEW SERVICE -->
 <section class="section section-alt">
   <div class="section-header">
-    <span class="section-num">06</span>
+    <span class="section-num">07</span>
     <h2 class="section-title">Peer Review Service</h2>
     <div class="section-line"></div>
   </div>
   <div class="conf-list">
     <div class="conf-item">
-      <div class="conf-role-wrap">
-        <span class="conf-role conf-role-chair">Reviewer</span>
-      </div>
+      <div class="conf-role-wrap"><span class="conf-role conf-role-chair">Reviewer</span></div>
       <div>
         <div class="conf-title">Nature Scientific Reports</div>
         <div class="conf-venue">Nature Portfolio · Multidisciplinary Science Journal</div>
       </div>
     </div>
     <div class="conf-item">
-      <div class="conf-role-wrap">
-        <span class="conf-role conf-role-chair">Reviewer</span>
-      </div>
+      <div class="conf-role-wrap"><span class="conf-role conf-role-chair">Reviewer</span></div>
       <div>
         <div class="conf-title">Urban Climate</div>
         <div class="conf-venue">Elsevier · Urban Meteorology &amp; Climate Science</div>
+      </div>
+    </div>
+    <div class="conf-item">
+      <div class="conf-role-wrap"><span class="conf-role conf-role-chair">Reviewer</span></div>
+      <div>
+        <div class="conf-title">NASA Proposal Review Panel</div>
+        <div class="conf-venue">National Aeronautics and Space Administration · Earth Science Division</div>
+      </div>
+    </div>
+    <div class="conf-item">
+      <div class="conf-role-wrap"><span class="conf-role conf-role-chair">Reviewer</span></div>
+      <div>
+        <div class="conf-title">Columbia University Panel Review</div>
+        <div class="conf-venue">Columbia University · Urban &amp; Environmental Research</div>
       </div>
     </div>
   </div>
@@ -1239,7 +980,7 @@
 <!-- TEACHING -->
 <section class="section" id="teaching">
   <div class="section-header">
-    <span class="section-num">07</span>
+    <span class="section-num">08</span>
     <h2 class="section-title">Teaching &amp; Mentorship</h2>
     <div class="section-line"></div>
   </div>
@@ -1268,31 +1009,31 @@
     <div class="teach-item">
       <div class="teach-date">2024</div>
       <div>
-        <div class="teach-title">Mentor — Megan Henriksen, MAS-GIS Capstone (ASU)</div>
-        <div class="teach-detail">Air Temperature Variation in Arizona through Machine Learning</div>
+        <div class="teach-title">Graduate Mentor — Megan Henriksen, MAS-GIS Capstone</div>
+        <div class="teach-detail">Arizona State University · Air Temperature Variation in Arizona through Machine Learning</div>
       </div>
     </div>
     <div class="teach-item">
       <div class="teach-date">2024</div>
       <div>
-        <div class="teach-title">Mentor — Trevon Chow, High School (BASIS Ahwatukee)</div>
-        <div class="teach-detail">Urban Heat Island (UHI) project, Phoenix, Arizona</div>
+        <div class="teach-title">High School Research Mentor — Trevon Chow</div>
+        <div class="teach-detail">BASIS Ahwatukee · Urban Heat Island (UHI) project, Phoenix, Arizona</div>
       </div>
     </div>
     <div class="teach-item">
       <div class="teach-date">2024</div>
       <div>
-        <div class="teach-title">Mentor — Aston Dolce, High School (BASIS Scottsdale)</div>
-        <div class="teach-detail">Urban Climate Research mentorship</div>
+        <div class="teach-title">High School Research Mentor — Aston Dolce</div>
+        <div class="teach-detail">BASIS Scottsdale · Urban Climate Research mentorship</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- SKILLS -->
-<section class="section">
+<section class="section section-alt">
   <div class="section-header">
-    <span class="section-num">08</span>
+    <span class="section-num">09</span>
     <h2 class="section-title">Technical Skills</h2>
     <div class="section-line"></div>
   </div>
@@ -1326,90 +1067,85 @@
     <div class="skill-card">
       <div class="skill-category">Machine Learning</div>
       <div class="skill-items">
-        <div class="skill-item">Extreme Gradient Boosting (XGBoost) · Random Forest</div>
-        <div class="skill-item">Support Vector Machine (SVM) · K-Nearest Neighbors (KNN) · Decision Tree</div>
+        <div class="skill-item">XGBoost · Random Forest</div>
+        <div class="skill-item">SVM · KNN · Decision Tree</div>
         <div class="skill-item">Graph Neural Network (GNN)</div>
-        <div class="skill-item">Principal Component Analysis (PCA) · DBSCAN · K-Means</div>
+        <div class="skill-item">PCA · DBSCAN · K-Means</div>
         <div class="skill-item">Ridge · LASSO · ElasticNet</div>
-        <div class="skill-item">Kolmogorov–Arnold Network (KAN)</div>
-        <div class="skill-item">Generalized Estimating Equation (GEE)</div>
+        <div class="skill-item">KAN · GEE</div>
       </div>
     </div>
     <div class="skill-card">
       <div class="skill-category">Deep Learning</div>
       <div class="skill-items">
-        <div class="skill-item">Convolutional Neural Network (CNN) · VGG · ResNet</div>
-        <div class="skill-item">Long Short-Term Memory (LSTM) · Recurrent Neural Network (RNN) · Gated Recurrent Unit (GRU)</div>
+        <div class="skill-item">CNN · VGG · ResNet</div>
+        <div class="skill-item">LSTM · RNN · GRU</div>
         <div class="skill-item">Transformer · U-Net</div>
       </div>
     </div>
     <div class="skill-card">
       <div class="skill-category">Generative Deep Learning</div>
       <div class="skill-items">
-        <div class="skill-item">Generative Adversarial Network (GAN) · Conditional GAN (cGAN)</div>
-        <div class="skill-item">Diffusion Models</div>
+        <div class="skill-item">GAN · Conditional GAN (cGAN)</div>
+        <div class="skill-item">Diffusion Models · DDPM</div>
         <div class="skill-item">Variational Autoencoder (VAE)</div>
-        <div class="skill-item">Denoising Diffusion Probabilistic Model (DDPM)</div>
       </div>
     </div>
     <div class="skill-card">
       <div class="skill-category">DL Frameworks</div>
       <div class="skill-items">
-        <div class="skill-item">PyTorch</div>
-        <div class="skill-item">TensorFlow</div>
-        <div class="skill-item">Keras</div>
+        <div class="skill-item">PyTorch · TensorFlow · Keras</div>
         <div class="skill-item">CUDA · cuDNN</div>
       </div>
     </div>
     <div class="skill-card">
-      <div class="skill-category">HPC &amp; Cloud Platforms</div>
+      <div class="skill-category">HPC &amp; Cloud</div>
       <div class="skill-items">
         <div class="skill-item">Sol Supercomputer (ASU)</div>
         <div class="skill-item">ARGO · Hopper (GMU)</div>
-        <div class="skill-item">Google Colab</div>
-        <div class="skill-item">NVIDIA A100 GPU</div>
+        <div class="skill-item">Google Colab · NVIDIA A100</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- MEDIA -->
-<section class="section section-alt">
+<section class="section">
   <div class="section-header">
-    <span class="section-num">09</span>
+    <span class="section-num">10</span>
     <h2 class="section-title">In the Media</h2>
     <div class="section-line"></div>
   </div>
   <div class="media-list">
     <div class="media-card">
-      <div class="media-source">ASU News · 2025</div>
+      <div class="media-source">ASU News · Jun 2025</div>
       <a class="media-headline" href="https://news.asu.edu/20250617-environment-and-sustainability-asu-researcher-calls-attention-overlooked-extreme-heat" target="_blank" rel="noopener noreferrer">
         ASU researcher calls attention to overlooked extreme heat issue — its effect on reproductive health
       </a>
     </div>
     <div class="media-card">
-      <div class="media-source">USA Today · 2024</div>
+      <div class="media-source">USA Today · Sep 2024</div>
       <a class="media-headline" href="https://www.usatoday.com/story/news/nation/2024/09/10/climate-scientists-say-accurate-temperature-readings-are-critical/75000507007/" target="_blank" rel="noopener noreferrer">
         How to measure heat correctly, according to scientists, and why it matters
       </a>
     </div>
     <div class="media-card">
-      <div class="media-source">AZ Central · 2024</div>
+      <div class="media-source">AZ Central · Jul 2024</div>
       <a class="media-headline" href="https://www.azcentral.com/story/news/local/arizona-environment/2024/07/10/how-phoenix-is-paving-the-way-on-urban-heat-research-and-mitigation/74198321007/" target="_blank" rel="noopener noreferrer">
         Sensing heat: How scientists in Phoenix study summer's deadliest invisible threat
       </a>
     </div>
     <div class="media-card">
-      <div class="media-source">YouTube · Brazel Research Award</div>
+      <div class="media-source">YouTube · ASU · 2025</div>
       <a class="media-headline" href="https://www.youtube.com/watch?v=pZEKSoMS-9U" target="_blank" rel="noopener noreferrer">
-        Student Scholarship Story with Alamin Molla, Brazel Research Award Recipient
+        Student Scholarship Story — Alamin Molla, Brazel Research Award Recipient
       </a>
     </div>
   </div>
 </section>
 
-<!-- REFERENCES -->
-<section class="section" id="contact">
+<!-- REFERENCES / CONTACT -->
+<section class="section section-alt" id="contact">
   <div class="section-header">
     <span class="section-num">10</span>
     <h2 class="section-title">References</h2>
@@ -1434,29 +1170,28 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER — condensed, no duplicate social grid -->
 <footer>
-  <div>
-    <div class="footer-name">Alamin Molla, M.Sc.</div>
-    <div class="footer-sub">Ph.D. Candidate in GIScience · Arizona State University</div>
-    <div class="footer-contact">
-      <a href="mailto:amolla@asu.edu">amolla@asu.edu</a> · 334-275-5734<br>
-      Lattie F. Coor Hall, Room 5549, Tempe AZ 85281
+  <div class="footer-inner">
+    <div>
+      <div class="footer-name">Alamin Molla, M.Sc.</div>
+      <div class="footer-sub">Ph.D. Candidate in GIScience · Arizona State University · Expected Spring 2027</div>
+      <div class="footer-contact">
+        <a href="mailto:amolla@asu.edu">amolla@asu.edu</a> · 334-275-5734<br>
+        Lattie F. Coor Hall, Room 5549 · 975 S Myrtle Ave, Tempe AZ 85281
+      </div>
+
     </div>
+
   </div>
-  <div class="footer-links">
-    <a class="footer-link" href="https://sites.google.com/view/alaminmolla/home" target="_blank">Google Site ↗</a>
-    <a class="footer-link" href="https://scholar.google.com/citations?user=LeIyUV4AAAAJ&hl=en" target="_blank">Google Scholar ↗</a>
-    <a class="footer-link" href="https://www.researchgate.net/profile/Alamin-Molla" target="_blank">ResearchGate ↗</a>
-    <a class="footer-link" href="https://www.linkedin.com/in/alamin-molla-051397a7/" target="_blank">LinkedIn ↗</a>
-    <a class="footer-link" href="https://github.com/AlaminMolla-Geospatial" target="_blank">GitHub ↗</a>
-    <a class="footer-link" href="https://search.asu.edu/profile/4671024" target="_blank">ASU Profile ↗</a>
+
+
+
+  <div class="footer-bottom" style="margin-top:24px;">
+    <p>© 2026 Alamin Molla · Urban Scientist · GIScience Ph.D. Candidate · Arizona State University</p>
+    <p>Spatial is Special</p>
   </div>
 </footer>
-<div class="footer-bottom">
-  <p>© 2026 Alamin Molla · Urban Scientist · GIScience Ph.D. Candidate</p>
-  <p>Built with precision for academic excellence</p>
-</div>
 
 </body>
 </html>
